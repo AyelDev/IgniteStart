@@ -1,0 +1,117 @@
+html, body{
+    margin: 0;
+    font: 1em "Fira Sans", sans-serif;
+}
+
+/* top nav */
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3bd813;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-center h1 {
+    margin: 0;
+    font-size: 24px;
+    font: 1.2em "Fira Sans", sans-serif;
+}
+
+.top-navbar img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* sections */
+
+#section1 {
+    background-color: lightblue;
+    padding: 100px;
+    height: 450px;
+}
+
+#section2 {
+    background-color: lightgreen;
+    padding: 100px;
+    height: 450px;
+}
+
+#section3 {
+    background-color: lightcoral;
+    padding: 100px;
+    height: 450px;
+}
+
+#section4 {
+    background-color: lightgoldenrodyellow;
+    padding: 100px;
+    height: 450px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.footer-left, .footer-right {
+    width: 45%;
+}
+
+.footer-left h3, .footer-right h3 {
+    margin-top: 0;
+}
+
+.footer-left ul, .footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-left ul li, .footer-right ul li {
+    margin: 5px 0;
+}
+
+.footer-left ul li a, .footer-right ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-center {
+    margin-top: 10px;
+}
+
+.footer-center p {
+    margin: 0;
+}
+
+.footer-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.footer-icon img {
+    width: 40px;
+    height: 40px;
+}
