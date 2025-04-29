@@ -1,0 +1,46 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body, h1, div, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;  /* This applies the imported font */
+    font-weight: 400;  /* You can adjust the weight as needed, e.g., 100, 400, 700, etc. */
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.sections {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+/* Style each section to be 1/3 width */
+.section1, .section2, .section3 {
+    width: 33%;  /* Each section takes up 30% of the total width */
+    height: 55.3rem; /* Just for demonstration, set a height for the sections */
+    background-color: #e0e0e0; /* Light grey background */
+    border: 1px solid #ccc;
+}
+
+/* Add some space between sections */
+.section1 {
+    background-color: #f2b5d4; /* Light pink for section 1 */
+}
+
+.section2 {
+    background-color: #b5e0f2; /* Light blue for section 2 */
+}
+
+.section3 {
+    background-color: #d4f2b5; /* Light green for section 3 */
+}
