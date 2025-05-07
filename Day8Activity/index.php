@@ -111,7 +111,7 @@ function findBob($names) {
 }
 
 // Test the function
-echo findBob(["Layla", "Kaitlyn", "Patricia"]);  // Output: 2
+echo findBob(["BOB", "Layla", "Kaitlyn", "Patricia"]);  // Output: 2
 
 ?>
 
