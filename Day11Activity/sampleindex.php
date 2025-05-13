@@ -31,7 +31,7 @@ include_once __DIR__ . "../controller/ActivityController.php";
                 <input type="text" id="word1" name="word1">
                 <label for="word2">Word2</label>
                 <input type="text" id="word2" name="word2">
-                <input type="submit" name="cme" value="submit">
+                <input class="button" type="submit" name="cme" value="submit">
             </form>
             <div class="result">
                 <p><?= $_SESSION['cmeRes'] ?? '' ?></p>
@@ -43,7 +43,7 @@ include_once __DIR__ . "../controller/ActivityController.php";
             <form action="controller/ActivityController.php" method="post">
                 <label for="input">input</label>
                 <input type="text" id="input" name="input">
-                <input type="submit" name="cad" value="submit">
+                <input class="button" type="submit" name="cad" value="submit">
             </form>
             <div class="result">
                 <?php
@@ -60,7 +60,10 @@ include_once __DIR__ . "../controller/ActivityController.php";
 
   <div class="section" id="section2">
       <h2>Multiply Number</h2>
-        <?= multiplyNum(15); ?>
+      <div class="cell_con">
+<?= multiplyNum(15); ?>
+      </div>
+        
   </div>
 
   <div class="section" id="section3">
@@ -68,7 +71,7 @@ include_once __DIR__ . "../controller/ActivityController.php";
             <form action="controller/ActivityController.php" method="post">
                 <label for="numbr">Num</label>
                 <input type="number" id="numbr" name="numbr">
-                <input type="submit" name="ipn" value="submit">
+                <input class="button" type="submit" name="ipn" value="submit">
             </form>
             <div class="result">
                 <p><?= $_SESSION['ipnRes'] ?? '' ?></p>
