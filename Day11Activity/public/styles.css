@@ -1,0 +1,137 @@
+body {
+    margin: 0 auto;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9f9f9; /* Added a subtle background color */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 900px; /* Uncommented and added back for better layout control */
+}
+
+input {
+    display: block;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+section.block h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem; /* Added font size for better heading visibility */
+}
+
+section.block p,
+section.block pre {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.cell {
+    margin: 10px;
+    padding: 10px; /* Increased padding for better spacing */
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px; /* Added border-radius for a softer look */
+    background-color: #fff; /* Added background color for contrast */
+}
+
+.cell p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+header {
+    background-color: #688fe6;
+    color: white; /* Added text color for better contrast */
+    padding: 10px 20px; /* Added padding for better spacing */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s; /* Added smooth hover transition */
+}
+
+nav ul li a:hover {
+    background-color: #dfd8d8;
+    border-radius: 4px;
+    color: #444;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.result {
+    background-color: #f3f3f3;
+    padding: 15px; /* Added padding for better spacing */
+    border-radius: 5px; /* Added border-radius for a softer look */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #688fe6;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        margin: 0;
+        border-top: 1px solid #ffffff;
+    }
+
+    nav ul li a {
+        padding: 15px;
+    }
+}
