@@ -13,9 +13,12 @@ unset($_SESSION['error_message']);
               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-
         <main>
             <div class="container">
+                
+                <!-- default admin account -->
+                <?= print_r(["username" => "admin", "password" => "pass123"]); ?>
+                
                 <header>
                     <h1>Applicant Training Guide<span>SYSTEM</span></h1>
                 </header>
