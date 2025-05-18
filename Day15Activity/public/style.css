@@ -7,12 +7,6 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-main {
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 700px;
-}
 
 input[type="text"],input[type="email"]  {
     width: 100%;
@@ -52,6 +46,7 @@ input[type="submit"] {
     max-width: 400px;
     margin: auto;
     padding: 30px;
+    /* border: 1px solid #ccc; */
     border-radius: 15px;
     background-color: #f9f9f9;
 }
@@ -93,6 +88,14 @@ input[type="submit"] {
     font-weight: bold;
     font-size: 18px;
 }
+
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #dbe5f0;
+} */
 
 .container {
     width: 100%;

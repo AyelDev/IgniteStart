@@ -5,12 +5,12 @@ function renderTbl(array $data, string $title = '', string $tableClass = 'data-t
         return;
     }
 
-    
+    echo '<div class="table-wrapper">';
 
     if ($title) {
         echo '<h3 class="table-title">' . htmlspecialchars($title) . '</h3>';
     }
-    echo '<div class="table-wrapper">';
+
     echo '<table class="' . htmlspecialchars($tableClass) . '">';
 
     // Remove 'password' key (case-insensitive)
@@ -47,7 +47,7 @@ function renderTbl(array $data, string $title = '', string $tableClass = 'data-t
 
             // Assuming each row has a unique 'id' key
             $id = $row['id'] ?? null;
-            echo '<td class="actions">';
+            echo '<td>';
             if ($id !== null) {
                 echo '<a id="openModal" href="../../controllers/MainController.php?id=' . urlencode($id) . '&userUpdate=true" class="btn btn-update">Update</a> ';
                 echo '<a href="../../controllers/MainController.php?id=' . urlencode($id) . '&userDelete=true" class="btn btn-delete" onclick="return confirm(\'Are you sure you want to delete this item?\')">Delete</a>';
@@ -77,3 +77,4 @@ function renderTbl(array $data, string $title = '', string $tableClass = 'data-t
 
     echo '</tbody></table></div>';
 }
+

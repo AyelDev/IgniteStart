@@ -24,12 +24,11 @@ unset($_SESSION['error_message'],$_SESSION['success_message']);
     </header>
 
     <form action="../../controllers/MainController.php" class="user-form" method="post">
-        
+    <h2>Update user <?= $_SESSION['userUpdate']['username'] ?></h2>
+
     <?= $errorMsg ? '<div class="error-msg">' . htmlspecialchars($errorMsg) . '</div>' : '' ?>
     <?= $successMsg ? '<div class="success-msg">' . htmlspecialchars($successMsg) . '</div>' : '' ?>
     
-    <h2>Update user <?= $_SESSION['userUpdate']['username'] ?></h2>
-
     <label for="firstname">Firstname</label>
     <input type="text" name="firstname" id="firstname" value="<?= $_SESSION['userUpdate']['firstname'] ?>" required="required">
 

@@ -9,7 +9,7 @@ $(document).ready(function(){
         if(inpLength == 0){
                 $('#userVal').text('');
         }else if (!pattern.test(inpVal) || inpLength < 5 ) {
-            $('#userVal').text('must be at least 5 characters and contain a letter, number, and symbol. ').removeClass().addClass('weak');
+            $('#userVal').text('Password must be at least 5 characters and contain a letter, number, and symbol. ').removeClass().addClass('weak');
         }
         else {
             $('#userVal').text('OK').removeClass().addClass('strong');
