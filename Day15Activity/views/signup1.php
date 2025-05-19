@@ -28,14 +28,14 @@ unset($_SESSION['error_message'], $_SESSION['success_message']);
                 <?= $successMsg ? '<div class="success-msg">' . htmlspecialchars($successMsg) . '</div>' : '' ?>
 
                 <form action="../controllers/MainController.php" method="post">
-                    <h3>Basic Information</h3>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter here.." required="required">
+                    <h2>Basic Information</h2>
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter here.." required="required">
 
-                    <label for="ctlocation">City Location</label>
-                    <input type="text" id="ctlocation" name="ctlocation" placeholder="Enter here.." required="required">
+                    <label for="lastname">City Location</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter here.." required="required">
 
-                    <h3>Login Credential</h3>
+                    <h2>Login Credential</h2>
                     <label for="sgnup-username">Username <span id="userVal"></span></label>
                     <input type="text" id="sgnup-username" name="username" placeholder="Enter here.."
                         required="required">

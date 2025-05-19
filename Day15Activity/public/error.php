@@ -7,6 +7,7 @@ unset($_SESSION['error_message']); // Prevent reuse
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Error</title>
     <style>
@@ -36,14 +37,16 @@ unset($_SESSION['error_message']); // Prevent reuse
             margin-top: 10px;
         }
 
-        a{
+        a {
             display: block;
         }
     </style>
 </head>
+
 <body>
     <h1>Something went wrong</h1>
     <p><?= htmlspecialchars($errorMessage) ?></p>
-    <a href="/Day14Activity/">Go Back</a>
+    <a href="/Day15Activity/">Go Back</a>
 </body>
+
 </html>

@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 body,
 html {
     height: 100%;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
 
-input[type="text"],input[type="email"]  {
+input[type="text"],
+input[type="email"] {
     width: 100%;
     padding: 10px 20px;
     margin: 8px 0;
@@ -46,7 +53,6 @@ input[type="submit"] {
     max-width: 400px;
     margin: auto;
     padding: 30px;
-    /* border: 1px solid #ccc; */
     border-radius: 15px;
     background-color: #f9f9f9;
 }
@@ -63,11 +69,13 @@ input[type="submit"] {
 }
 
 /* validations */
-.signin-form-container span{
+.signin-form-container span {
     display: inline;
 }
 
-.weak, .fail, .strong{
+.weak,
+.fail,
+.strong {
     font-size: 13px;
 }
 
@@ -89,22 +97,15 @@ input[type="submit"] {
     font-size: 18px;
 }
 
-/* main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #dbe5f0;
-} */
-
 .container {
     width: 100%;
     max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    /* border: 1px solid #ccc; */
+    margin: 0;
+    padding: 9px;
+    border: 1px solid #ccc;
     border-radius: 15px;
     background-color: #dbe5f0;
+    margin: 0px;
 }
 
 /* singin */
@@ -121,11 +122,11 @@ input[type="submit"] {
 }
 
 .signin-form-container {
-    width: 100%;
+    width: 80%;
     max-width: 400px;
     margin: auto;
-    padding: 30px;
-    /* border: 1px solid #ccc; */
+    padding: 12px 14px;
+    border: 1px solid #ccc;
     border-radius: 15px;
     background-color: #f9f9f9;
 }
@@ -255,19 +256,19 @@ img:first-child {
     grid-row: 2 / 3;
 }
 
-
-.error-msg, .success-msg{
+.error-msg,
+.success-msg {
     font-size: 15px;
 }
 
-.error-msg{
+.error-msg {
     background-color: rgb(247, 212, 212);
     color: rgb(255, 38, 38);
     border: solid 1px rgb(255, 182, 182);
     padding: 0 10px;
 }
 
-.success-msg{
+.success-msg {
     background-color: rgb(212, 247, 235);
     color: rgb(36, 128, 8);
     border: solid 1px rgb(150, 211, 154);
