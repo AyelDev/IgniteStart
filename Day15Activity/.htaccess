@@ -1,8 +1,0 @@
-RewriteEngine On
-
-# If the requested file without ".php" exists, internally rewrite to the .php file
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.+)$ $1.php [L]
-
-ErrorDocument 404 /Day15Activity/public/error.php
-ErrorDocument 500 /Day15Activity/public/error.php
