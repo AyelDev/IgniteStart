@@ -11,6 +11,7 @@ class UserController extends BaseController
         $query = $db->query("SELECT * FROM user");
         $result = $query->getResult();
 
+        $db->close();
         // Set the correct header for JSON output
         header('Content-Type: application/json');
 
@@ -18,4 +19,5 @@ class UserController extends BaseController
         echo json_encode($result);
             // return view('index_file');
     }
+
 }
