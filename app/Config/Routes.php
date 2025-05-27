@@ -7,4 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+$routes->post('/login', 'LoginAuth::authenticate');
+
 $routes->get('/user','UserController::getstudents');
