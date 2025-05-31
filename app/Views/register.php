@@ -8,15 +8,28 @@
 <body>
         <!-- NOTE: E INLINE LANG SA ANG UI IF EVER LOL -->
         <div>
-            <form action="">
+
+                <?php if(session()->has('error-msg')): ?>
+                    <div class="alert alert-danger">
+                        <?= session('error-msg') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(session()->has('success-msg')): ?>
+                    <div class="alert alert-danger">
+                        <?= session('success-msg') ?>
+                    </div>
+                <?php endif; ?>
+
+            <form action="register" method="post">
                 <label for="name">Name</label>
-                <input type="text" id="name">    
-                <label for="">Username</label>
-                <input type="text" id="username">
-                <label for="">Password</label>
-                <input type="password">
+                <input type="text" id="name" name="name">    
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
                 <button>Register</button>
             </form>
         </div>
 </body>
-</html>
+</html> 
