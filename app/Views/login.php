@@ -108,6 +108,7 @@
                     <input type="password" id="password" name="password" required>
 
                     <button class="submit-btn" name="ignite-login">login</button>
+                    <a href="register">Register</a>
                 </div>
             </form>
         </div>

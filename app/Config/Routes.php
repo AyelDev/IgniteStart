@@ -10,3 +10,5 @@ $routes->get('/', 'Home::index');
 $routes->post('/login', 'LoginAuth::authenticate');
 
 $routes->get('/user','UserController::getstudents');
+
+$routes->get('/register', 'UserRegister::index');
