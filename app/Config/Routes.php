@@ -9,8 +9,14 @@ $routes->get('/', 'Home::index');
 
 $routes->post('/login', 'LoginAuth::authenticate');
 
-$routes->get('/user','UserController::getstudents');
+// $routes->get('/user','UserController::getstudents');
 
-$routes->get('/register', 'UserRegister::index');
+// $routes->post('user/register', 'UserRegister::register');
 
-$routes->post('/register', 'UserRegister::register');
+$routes->get('user/register', 'User::index');   
+
+$routes->post('user/register', 'User::register');
+
+$routes->get('user/dashboard', 'User::dashboard', ['filter' => 'authGuard']);
+
+
