@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
-        <!-- NOTE: E INLINE LANG SA ANG UI IF EVER LOL -->
-        <div>
+<?= view('templates/header',  ['title' => 'Register']); ?>
 
+        <div>
                 <?php if(session()->has('error-msg')): ?>
                     <div class="alert alert-danger">
                         <?= session('error-msg') ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if(session()->has('success-msg')): ?>
+                <?php if (isset($validation)) : ?>
                     <div class="alert alert-danger">
-                        <?= session('success-msg') ?>
+                        <?= $validation->listErrors(); ?>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> 
+               
 
             <form action="register" method="post">
                 <label for="name">Name</label>
@@ -29,7 +22,8 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
                 <button>Register</button>
-            </form>
+            </form> 
+            <a href="/">Login</a>
         </div>
-</body>
-</html> 
+        
+<?= view('templates/footer'); ?>

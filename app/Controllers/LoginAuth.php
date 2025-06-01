@@ -8,8 +8,10 @@ class LoginAuth extends BaseController
 {   
 
     protected $session;
+    protected $db;
 
     public function __construct(){
+        $this->db = \Config\Database::connect();
         $this->session = \Config\Services::session();
         $this->session->start();
     }
@@ -23,6 +25,8 @@ class LoginAuth extends BaseController
             session()->setFlashdata('error-msg', 'Login error');
             return redirect()->to('/');
         }
+
+        
 
         return view('login');
     }

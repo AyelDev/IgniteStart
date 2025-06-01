@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css'); ?>">    
-    <title>Login</title>
-</head>
-
-<body>
-
-    <header>
-        <h1>Ignite Start</h1>
-    </header>
-    <div class="container">
-
+<?= view('templates/header', ['title' => 'Login']); ?>
+ 
         <div class="login-form">
+    
             <form action="login" method="post">
 
                 <?php if(session()->has('error-msg')): ?>
                     <div class="alert alert-danger">
                         <?= session('error-msg') ?>
+                    </div>
+                <?php endif; ?> 
+
+                <?php if(session()->has('success-msg')): ?>
+                    <div class="alert alert-success">
+                        <?= session('success-msg') ?>
                     </div>
                 <?php endif; ?>
 
@@ -31,13 +23,11 @@
                     <input type="password" id="password" name="password" required>
 
                     <button class="submit-btn" name="ignite-login">login</button>
-                    <a href="register">Register</a>
+                    <a href="user/register">Register</a>
                 </div>
+
             </form>
+
         </div>
-    </div>
 
-    <script src="<?=base_url('js/main.js'); ?>"></script>
-</body>
-
-</html>
+<?= view('templates/footer'); ?>
