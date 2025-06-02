@@ -1,0 +1,80 @@
+    /*https://colorhunt.co/palette/c7db9cfff0bdfdab9ee50046*/
+    @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Berkshire Swash", serif;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* login page */
+
+    .login-form {
+        padding: 31px;
+        width: 20%;
+        border: solid 1px #C7DB9C;
+        box-shadow: 0px 12px 12px 1px #C7DB9C;
+    }
+
+    .form-group {
+        background: white;
+    }
+
+    input {
+        font-family: "Berkshire Swash", serif;
+        display: block;
+        width: 100%;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+
+    .login-form label {
+        line-height: 40px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .submit-btn {
+        background-color: #C7DB9C;
+        font-size: 23px;
+        border-style: none;
+        width: 44%;
+        border-radius: 12px;
+        margin: auto;
+        text-transform: uppercase;
+        font-family: "Berkshire Swash", serif;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background: rgb(113, 133, 102);
+        color: #FFF0BD;
+    }
+
+    .alert {
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success{
+    background-color: #e7f8d7;
+    color: #37721c;
+}

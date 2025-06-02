@@ -25,6 +25,9 @@ class Validation extends BaseConfig
         FormatRules::class,
         FileRules::class,
         CreditCardRules::class,
+        
+        //custom validation
+        \App\Validation\UserRule::class
     ];
 
     /**
