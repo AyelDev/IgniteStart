@@ -1,6 +1,61 @@
     /*https://colorhunt.co/palette/c7db9cfff0bdfdab9ee50046*/
     @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
+  /* HTML5 display-role reset for older browsers */
+  /* end reset */
+
+/*preset*/
+
+    /*Heading for SEO*/
+    /*Thumbnail Images*/
+    /* Text Alignment */
+    /* Forms Presets */
+
+/*end preset*/
+
+/*header*/
+/*end header*/
+
+/*nav*/
+
+    /*second level drop down*/
+    /*third level drop down*/
+    /* Drop down icon */
+    /* Navigation bar icon */
+    /*Burger Color*/
+    /* Default Responsive Style for Toggle Swipe Right */
+    /*Responsive burger and color*/
+
+/*end nav*/
+
+/*global class*/
+
+/*banner*/
+/*end banner*/
+
+/*middle*/
+/*end middle*/
+
+/*main*/
+/*end main*/
+
+/*sidebar*/
+/*end sidebar*/
+
+/*bottom*/
+/*end bottom*/
+
+/*footer*/
+    /**Resources**/
+    /* IE 8 */  
+    /* Sitemap Style */
+    /* Pages under Certain Parent Pages */
+    /* Breadcrumb Styling */
+    /* End Breadcrumb Styling */
+    /* Non-home */
+    /* Form Activation Style (Recaptcha & Prompt Message) */
+    /* End Form Activation Styling */
+    
     body {
         margin: 0;
         padding: 0;
