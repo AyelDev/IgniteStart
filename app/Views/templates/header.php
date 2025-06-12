@@ -1,5 +1,5 @@
-    <!-- header start -->
+    <!-- Header -->
     <header>
         <h1>Ignite Start</h1>
     </header>
-    <!-- header end -->
+    <!-- End header  -->

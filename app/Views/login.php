@@ -1,24 +1,14 @@
-<?= view('templates/header', ['title' => 'Login']); ?>
+<?= view('templates/head', ['title' => 'Login']);  ?>
+<?= view('templates/header'); ?>
 
 <div class="login-container">
-    
+
     <div class="login-form">
 
         <form action="login" method="post">
 
-            <?php if (session()->has('error-msg')): ?>
-                <div class="alert alert-danger">
-                    <?= session('error-msg') ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if (session()->has('success-msg')): ?>
-                <div class="alert alert-success">
-                    <?= session('success-msg') ?>
-                </div>
-            <?php endif; ?>
-
             <div class="form-group">
+                <p for="">Login</p>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password</label>
@@ -26,6 +16,19 @@
 
                 <button class="submit-btn" name="ignite-login">login</button>
                 <a href="user/register">Register</a>
+
+                <?php if (session()->has('error-msg')): ?>
+                    <div class="alert alert-danger">
+                        <?= session('error-msg') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (session()->has('success-msg')): ?>
+                    <div class="alert alert-success">
+                        <?= session('success-msg') ?>
+                    </div>
+                <?php endif; ?>
+
             </div>
 
         </form>
@@ -34,4 +37,4 @@
 
 </div>
 
-<!-- ?= view('templates/footer'); ? -->
+<?= view('templates/footer'); ?>

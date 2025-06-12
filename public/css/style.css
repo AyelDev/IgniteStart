@@ -1,12 +1,21 @@
     /*https://colorhunt.co/palette/c7db9cfff0bdfdab9ee50046*/
-    @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
   /* HTML5 display-role reset for older browsers */
   /* end reset */
 
 /*preset*/
+ 
+    :root{
+        --primColor: #511D43;
+        --secndColor: #901E3E;
+        --textColor: #f0e7e7;
+        --baseColor: #DC2525;
+        --baseColor2: #9BC09C;
+    }
+    
+     button, input, label, h1, a, p{ font-family: "Bebas Neue", sans-serif; }
 
-    /*Heading for SEO*/
     /*Thumbnail Images*/
     /* Text Alignment */
     /* Forms Presets */
@@ -14,6 +23,19 @@
 /*end preset*/
 
 /*header*/
+
+    header{ 
+        display: block;
+        width: 100%;
+        background-color: var(--secndColor);
+        background: linear-gradient(0deg,rgba(81, 29, 67, 1) 0%, rgba(126, 30, 63, 1) 51%, rgba(144, 30, 62, 1) 100%);
+    }
+
+    header h1{ margin-left: 20px; margin-top: 0; font-size: 50px; color: var(--baseColor2); margin-bottom: 0;}
+    header h1:after{
+    content: "(Checklist App)";
+    font-size: 20px;
+    }
 /*end header*/
 
 /*nav*/
@@ -37,6 +59,59 @@
 /*end middle*/
 
 /*main*/
+
+   /* login */
+
+    .login-container{ background: var(--primColor); position: fixed; height: 100%; width: 100%; padding: 183px 0; }
+
+    .login-form{ min-height: 342px; max-width: 454px; align-content: center; margin: auto; background-color: var(--baseColor2); border-radius: 25px; transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;}
+    .login-form:hover {
+        border: solid 2px aliceblue;
+        box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
+        -webkit-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
+        -moz-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
+        transform: scale(1.00); 
+    }    
+    .login-form p{
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--primColor);
+        margin: 8px 0;
+        border-bottom: 2px solid #000;
+    }
+
+    .form-group { margin: 0 15px; padding: 20px 0; }
+    .form-group label{ font-size: 25px; }
+    .form-group input{ display: block; width: 98%; line-height: 40px; margin-bottom: 20px; border-radius: 8px; font-size: 20px; border-style: none; }
+    .form-group button{ padding: 10px 37px; }
+
+    .submit-btn{ background-color: #fbb636; border-style: none; font-size: 14px; transition: background 0.3s ease; }
+    .submit-btn:hover{background: #9e711d; color: var(--textColor); border-radius: 3px;}
+   
+    
+    .alert.alert-danger {
+      padding: 8px 0;
+      font-size: 20px;
+      font-family: "Bebas Neue", sans-serif;
+      color: var(--baseColor);
+      align-content: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .alert.alert-success {
+          padding: 8px 0;
+          font-size: 20px;
+          font-family: "Bebas Neue", sans-serif;
+          color: #004e2a;
+          align-content: center;
+          display: flex;
+          justify-content: center;
+    }
+    /* end login */
+
 /*end main*/
 
 /*sidebar*/
@@ -46,6 +121,14 @@
 /*end bottom*/
 
 /*footer*/
+
+    .site-footer { position: absolute; bottom: 0; width: 95.8%; background-color: var(--primColor); color: var(--textColor); padding: 20px 40px; text-align: center; }
+
+    .footer-content p { margin: 0 0 10px; font-size: 14px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; }
+    .footer-links a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: white; }
+
     /**Resources**/
     /* IE 8 */  
     /* Sitemap Style */
@@ -56,80 +139,6 @@
     /* Form Activation Style (Recaptcha & Prompt Message) */
     /* End Form Activation Styling */
     
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Berkshire Swash", serif;
-    }
+    body { margin: 0; padding: 0; }
 
-    .container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* login page */
-
-    .login-form {
-        padding: 31px;
-        width: 20%;
-        border: solid 1px #C7DB9C;
-        box-shadow: 0px 12px 12px 1px #C7DB9C;
-    }
-
-    .form-group {
-        background: white;
-    }
-
-    input {
-        font-family: "Berkshire Swash", serif;
-        display: block;
-        width: 100%;
-        line-height: 40px;
-        margin-bottom: 20px;
-    }
-
-    .login-form label {
-        line-height: 40px;
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .submit-btn {
-        background-color: #C7DB9C;
-        font-size: 23px;
-        border-style: none;
-        width: 44%;
-        border-radius: 12px;
-        margin: auto;
-        text-transform: uppercase;
-        font-family: "Berkshire Swash", serif;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .submit-btn:hover {
-        background: rgb(113, 133, 102);
-        color: #FFF0BD;
-    }
-
-    .alert {
-  padding: 5px;
-  margin-top: 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.alert-danger {
-  background-color: #f8d7da;
-  color: #721c24;
-}
-
-.alert-success{
-    background-color: #e7f8d7;
-    color: #37721c;
-}
+    .container { width: 100%; justify-content: center; align-items: center; }
