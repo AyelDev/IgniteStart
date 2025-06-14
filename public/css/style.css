@@ -65,52 +65,38 @@
     .login-container{ background: var(--primColor); position: fixed; height: 100%; width: 100%; padding: 183px 0; }
 
     .login-form{ min-height: 342px; max-width: 454px; align-content: center; margin: auto; background-color: var(--baseColor2); border-radius: 25px; transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;}
-    .login-form:hover {
-        border: solid 2px aliceblue;
-        box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
-        -webkit-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
-        -moz-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29);
-        transform: scale(1.00); 
-    }    
-    .login-form p{
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--primColor);
-        margin: 8px 0;
-        border-bottom: 2px solid #000;
-    }
+    .login-form:hover { border: solid 2px aliceblue; box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); -webkit-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); -moz-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); transform: scale(1.00); }    
+    .login-form p{ font-size: 30px; display: flex; justify-content: center; align-items: center; color: var(--primColor); margin: 8px 0; border-bottom: 2px solid #000; }
 
-    .form-group { margin: 0 15px; padding: 20px 0; }
-    .form-group label{ font-size: 25px; }
-    .form-group input{ display: block; width: 98%; line-height: 40px; margin-bottom: 20px; border-radius: 8px; font-size: 20px; border-style: none; }
-    .form-group button{ padding: 10px 37px; }
+    .login-form-group { margin: 0 15px; padding: 20px 0; }
+    .login-form-group label{ font-size: 20px; }
+    .login-form-group input{ display: block; width: 98%; line-height: 40px; margin-bottom: 20px; border-radius: 8px; font-size: 20px; border-style: none; }
+    .login-form-group button{ padding: 10px 37px; }
 
     .submit-btn{ background-color: #fbb636; border-style: none; font-size: 14px; transition: background 0.3s ease; }
     .submit-btn:hover{background: #9e711d; color: var(--textColor); border-radius: 3px;}
    
     
-    .alert.alert-danger {
-      padding: 8px 0;
-      font-size: 20px;
-      font-family: "Bebas Neue", sans-serif;
-      color: var(--baseColor);
-      align-content: center;
-      display: flex;
-      justify-content: center;
-    }
-
-    .alert.alert-success {
-          padding: 8px 0;
-          font-size: 20px;
-          font-family: "Bebas Neue", sans-serif;
-          color: #004e2a;
-          align-content: center;
-          display: flex;
-          justify-content: center;
-    }
+    .alert.alert-danger { padding: 8px 0; font-size: 20px; font-family: "Bebas Neue", sans-serif; color: var(--baseColor); align-content: center; display: flex; justify-content: center; }
+    .alert.alert-success { padding: 8px 0; font-size: 20px; font-family: "Bebas Neue", sans-serif; color: #004e2a; align-content: center; display: flex; justify-content: center; }
+    
     /* end login */
+
+    /* register */
+
+    .register-container{ background: var(--primColor); position: fixed; height: 100%; width: 100%; padding: 183px 0; }
+
+    .register-form{ min-height: 342px; max-width: 454px; align-content: center; margin: auto; background-color: var(--baseColor2); border-radius: 25px; transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;}
+    .register-form:hover { border: solid 2px aliceblue; box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); -webkit-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); -moz-box-shadow: 0px 1px 25px 8px rgba(255,255,255,0.29); transform: scale(1.00); }    
+    
+    .register-form p{ font-size: 30px; display: flex; justify-content: center; align-items: center; color: var(--primColor); margin: 8px 0; border-bottom: 2px solid #000; }
+    
+    .register-form-group { margin: 0 15px; padding: 20px 0; }
+    .register-form-group label{ font-size: 20px; }
+    .register-form-group label::after{ content: '*'; color: red; }
+    .register-form-group input{ display: block; width: 98%; line-height: 40px; margin-bottom: 20px; border-radius: 8px; font-size: 20px; border-style: none; }
+    .register-form-group button{ padding: 10px 37px; }
+    /* end register */
 
 /*end main*/
 

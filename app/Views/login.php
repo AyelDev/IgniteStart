@@ -7,7 +7,7 @@
 
         <form action="login" method="post">
 
-            <div class="form-group">
+            <div class="login-form-group">
                 <p for="">Login</p>
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
