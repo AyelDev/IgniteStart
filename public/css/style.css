@@ -35,7 +35,7 @@
 
     header h1{ margin-left: 20px; margin-top: 0; font-size: 50px; color: var(--baseColor2); margin-bottom: 0;}
     header h1:after{
-    content: "(Checklist App)";
+    content: "(To-Do App)";
     font-size: 20px;
     }
 /*end header*/
