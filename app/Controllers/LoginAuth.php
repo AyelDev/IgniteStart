@@ -26,8 +26,6 @@ class LoginAuth extends BaseController
             return redirect()->to('/');
         }
 
-        
-
         return view('login');
     }
    

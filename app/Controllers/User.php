@@ -31,12 +31,19 @@ class User extends BaseController
                     'max_length' => 'name must be atleast 50 characters'
                 ],
             ],
-             'username'=>[
+            'username'=>[
                     'rules' => 'required|min_length[5]|max_length[15]|valid_username|is_unique[user.username]',
                     'errors' => [
                         'required' => 'Username is required',
-                        'valid_username' => 'Enter a valid username (letters, numbers, _ or -)',
-                        'is_unique' => 'This email is already registered'
+                        'valid_username' => 'Please enter a valid username with at least 1 number and 1 special character',
+                        'is_unique' => 'This username is already registered'
+                    ],
+            ],
+            'password'=>[
+                    'rules' => 'required|min_length[5]|max_length[15]|valid_password',
+                    'errors' => [
+                        'required' => 'Password is required',
+                        'valid_password' => 'Please enter a valid password with at least 1 number and 1 special character'
                     ],
             ]
                 //NOTE: CONTINUE VALIDATION
@@ -63,7 +70,6 @@ class User extends BaseController
             $data['validation'] = $this->validator;
             return view('user/register', $data);
         }
-
     }
 
     //dashboard
@@ -72,6 +78,5 @@ class User extends BaseController
         $data['session'] = session();
         return view('user/dashboard' , $data);
     }
-
 
 }

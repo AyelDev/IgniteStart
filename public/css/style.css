@@ -1,5 +1,6 @@
     /*https://colorhunt.co/palette/c7db9cfff0bdfdab9ee50046*/
    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
   /* HTML5 display-role reset for older browsers */
   /* end reset */
@@ -14,7 +15,8 @@
         --baseColor2: #9BC09C;
     }
     
-     button, input, label, h1, a, p{ font-family: "Bebas Neue", sans-serif; }
+     button, input[type="submit"], label, h1, a, p{ font-family: "Bebas Neue", sans-serif; }
+     input[type="text"]{font-family: "Roboto", sans-serif;}
 
     /*Thumbnail Images*/
     /* Text Alignment */
@@ -77,9 +79,10 @@
     .submit-btn:hover{background: #9e711d; color: var(--textColor); border-radius: 3px;}
    
     
-    .alert.alert-danger { padding: 8px 0; font-size: 20px; font-family: "Bebas Neue", sans-serif; color: var(--baseColor); align-content: center; display: flex; justify-content: center; }
-    .alert.alert-success { padding: 8px 0; font-size: 20px; font-family: "Bebas Neue", sans-serif; color: #004e2a; align-content: center; display: flex; justify-content: center; }
-    
+    .alert.alert-danger { padding: 8px 0; font-size: 15px; font-family: "Bebas Neue", sans-serif; color: var(--baseColor); align-content: center; display: flex; justify-content: center; }
+    .alert.alert-success { padding: 8px 0; font-size: 15px; font-family: "Bebas Neue", sans-serif; color: #004e2a; align-content: center; display: flex; justify-content: center; }
+    .alert.alert-danger ul { margin-right: 20px; }
+
     /* end login */
 
     /* register */

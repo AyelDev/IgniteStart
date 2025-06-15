@@ -1,5 +1,7 @@
 <?php
 
+// NOTE: page to be removed - na balhin na ang tanan controllers sa user
+
 namespace App\Controllers;
 
 use Exception;
