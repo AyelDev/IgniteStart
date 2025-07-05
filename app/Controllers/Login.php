@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\HTTP\URI;
 
-class LoginAuth extends BaseController
+class Login extends BaseController
 {   
 
     protected $session;
@@ -18,7 +18,7 @@ class LoginAuth extends BaseController
 
     public function authenticate()
     {
-        $username = $this->request->getPost('username');
+        $username = $this->request->getPost('emails');
         $password = $this->request->getPost('password');
 
         if(empty(trim($username)) || empty(trim($password))){

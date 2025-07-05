@@ -14,10 +14,5 @@ class Home extends BaseController
     {
         return view('login');
     }
-    
-    public function admin_login(): string
-    {
-        return view('adminlog.php');
-    }
    
 }

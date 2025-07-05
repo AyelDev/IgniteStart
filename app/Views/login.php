@@ -1,12 +1,11 @@
-<?= view('templates/head', ['title' => 'Login']);  ?>
-<?= view('templates/header'); ?>
+<?= view('includes/login_register/head', ['title' => 'Login']);  ?>
+<?= view('includes/login_register/header'); ?>
 
 <div class="login-container">
 
     <div class="login-form">
 
-        <form action="login" method="post">
-
+        <form method="post">
             <div class="login-form-group">
                 <p for="">Login</p>
                 <label for="username">Username</label>
@@ -28,13 +27,11 @@
                         <?= session('success-msg') ?>
                     </div>
                 <?php endif; ?>
-
             </div>
-
         </form>
 
     </div>
 
 </div>
 
-<?= view('templates/footer'); ?>
+<?= view('includes/login_register/footer'); ?>

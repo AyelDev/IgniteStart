@@ -24,7 +24,7 @@ class UserRegister extends BaseController
     public function register(){
 
         $name = trim($this->request->getPost('name'));
-        $username = trim($this->request->getPost('username'));
+        $email = trim($this->request->getPost('email'));
         $password = trim($this->request->getPost('password'));
 
         if(empty($name) || empty($username) || empty($password))
@@ -36,13 +36,13 @@ class UserRegister extends BaseController
         
         $data = [
             'name' => $name,
-            'username' => $username,
+            'email' => $email,
             'password' => hash($this->hashAlgo ,$password)
         ];
 
         try
         {
-            $builder = $this->db->table('user');
+            $builder = $this->db->table('tbl_user');
             
             $builder->insert($data);
             session()->setFlashdata('success-msg', 'Registration success');

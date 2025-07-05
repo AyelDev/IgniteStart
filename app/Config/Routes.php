@@ -8,15 +8,12 @@ use CodeIgniter\Router\RouteCollection;
 
 // login pages
 
-    // user login page (default)
-    $routes->get('/', 'Home::user_login');
-
-    // admin login page
-    $routes->get('/adminlog', 'Home::admin_login');
+// user login page (default)
+$routes->get('/', 'Home::user_login');
 
 // end login page
 
-$routes->post('/login', 'LoginAuth::authenticate');
+$routes->post('/login', 'Login::authenticate');
 
 // admin login page
 
