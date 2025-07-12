@@ -61,3 +61,20 @@ async function sendRequest(jsonData, url, method) {
     function showWarning(title = 'Warning', warning) {
       toastr.warning(title, warning);
     }
+
+
+    // waitMe Js loader
+    function loadForm(formid = '', effect, text = '') {
+        $(formid).waitMe({
+        effect: effect,
+        text: text,
+        bg: 'rgba(114, 88, 161, 0.95)',
+        color:'rgb(255, 255, 255)',
+        maxSize: '',
+        waitTime: -1,
+        textPos: 'vertical',
+        fontSize: '20px',
+        source: '',
+        onClose: function () {}
+      });
+    }

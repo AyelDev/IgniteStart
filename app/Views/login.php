@@ -8,14 +8,18 @@
         <form method="post">
             <div class="login-form-group">
                 <p for="">Login</p>
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
 
-                <button class="submit-btn" name="ignite-login">login</button>
+                <button class="submit-btn" id="login"  name="ignite-login">login</button>
+
+                <button class="recover-password" name="ignite-login">recover my account</button>
+                
                 <a href="user/register">Register</a>
 
+               
                 <?php if (session()->has('error-msg')): ?>
                     <div class="alert alert-danger">
                         <?= session('error-msg') ?>

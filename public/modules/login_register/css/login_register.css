@@ -149,6 +149,19 @@ header h1:after {
   border-radius: 3px;
 }
 
+.recover-password {
+  background-color: #36fbfb;
+  border-style: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.recover-password:hover {
+  background: #1b7474;
+  color: var(--textColor);
+  border-radius: 3px;
+}
+
 .alert.alert-danger {
   padding: 8px 0;
   font-size: 15px;
@@ -303,4 +316,13 @@ body {
 
 #toast-container * {
   font-family: "Bebas Neue", sans-serif !important;
+}
+
+/* override waitme js*/
+.waitMe_text {
+  font-family: "Bebas Neue", sans-serif !important;
+}
+
+.waitMe_container .waitMe {
+  border-radius: inherit !important;
 }

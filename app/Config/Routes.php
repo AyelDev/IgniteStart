@@ -9,21 +9,15 @@ use CodeIgniter\Router\RouteCollection;
 // login pages
 
 // user login page (default)
-$routes->get('/', 'Home::user_login');
+$routes->get('/', 'Home::user_login', ['filter' => 'auth']);
 
-// end login page
+$routes->post('/authenticate', 'User::authenticate');
 
-$routes->post('/login', 'Login::authenticate');
-
-// admin login page
-
-// $routes->get('/user','UserController::getstudents');
-
-// $routes->post('user/register', 'UserRegister::register');
-
-$routes->get('user/register', 'User::index');   
-
+$routes->get('user/register', 'User::index');
 $routes->post('user/register', 'User::register');
 
-$routes->get('user/dashboard', 'User::dashboard', ['filter' => 'authGuard']);
+$routes->get('user/dashboard', 'User::userDashboard', ['filter' => 'userAuth']);
 
+$routes->get('admin/dashboard', 'User::adminDashboard', ['filter' => 'adminAuth']);
+
+$routes->get('/logout', 'User::logout');

@@ -20,6 +20,90 @@ class User extends BaseController
         return view('user/register', $data);
     }
 
+    public function authenticate()
+    {
+        if (!$this->request->isAJAX()) {
+            return $this->response
+                ->setStatusCode(400)
+                ->setJSON([
+                    'sts_code' => 0,
+                    'message' => 'Invalid request type. AJAX expected.'
+                ]);
+        }
+
+        $rules = [
+            'email' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Email is required',
+                    'valid_email' => 'Please enter a valid email'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Password is required'
+                ]
+            ]
+
+        ];
+
+        if ($this->validate($rules)) {
+            $userModel = new UserModel();
+            $JSON_Data = $this->request->getJSON(true);
+
+            $user = $userModel->where('email', $JSON_Data['email'])->first();
+
+            if ($user && password_verify($JSON_Data['password'], $user['password'])) {
+
+                switch ($user['user_status']) {
+                    case 0:
+                        $this->session->set('user_login', $user);
+                        return $this->response
+                            ->setStatusCode(401)
+                            ->setContentType('application/json')
+                            ->setJSON([
+                                'sts_code' => 0,
+                                'message' => [
+                                    'invalid' => 'This is deactivated user'
+                                ]
+                            ]);
+
+                    case 1:
+                        $this->session->set('user_login', $user);
+                        return $this->response
+                            ->setStatusCode(200)
+                            ->setContentType('application/json')
+                            ->setJSON([
+                                'sts_code' => 1,
+                                'id' => $user['id'], 
+                                'user_type' => $user['user_type'],
+                                'message' => 'Welcome ' . $user['name']                                
+                            ]);
+
+                    default:
+                        return;
+                }
+            } else {
+                return $this->response
+                    ->setStatusCode(401)
+                    ->setJSON([
+                        'sts_code' => 0,
+                        'message' => [
+                            'invalid' => 'Invalid Email or Password'
+                        ]
+                    ]);
+            }
+        }
+
+        return $this->response
+            ->setStatusCode(422)
+            ->setJSON([
+                'sts_code' => 0,
+                'message' => $this->validator->getErrors()
+            ]);
+    }
+
     public function register()
     {
 
@@ -72,17 +156,17 @@ class User extends BaseController
             // return redirect()->to('/');
 
             $userModel->save($data);
-             
+
             return $this->response
-            ->setStatusCode(201)
-            ->setContentType('application/json')
-            ->setJSON([
-                'sts_code' => 1,
-                'message' => 'Registration success'
-            ]);
+                ->setStatusCode(201)
+                ->setContentType('application/json')
+                ->setJSON([
+                    'sts_code' => 1,
+                    'message' => 'Registration success'
+                ]);
         }
 
-             return $this->response
+        return $this->response
             ->setStatusCode(422)
             ->setJSON([
                 'sts_code' => 0,
@@ -91,10 +175,22 @@ class User extends BaseController
     }
 
     //dashboard
-    public function dashboard()
+    public function userDashboard()
     {
         $data = [];
         $data['session'] = session();
         return view('user/dashboard', $data);
+    }
+
+    public function adminDashboard()
+    {
+        $data = [];
+        $data['session'] = session();
+        return view('admin/dashboard', $data);
+    }
+
+    public function logout(){
+        session()->destroy();
+        return redirect()->to('/');
     }
 }

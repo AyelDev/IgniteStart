@@ -16,5 +16,6 @@
 <script src="<?= base_url('global/main.js'); ?>"></script>
 <script src="<?= base_url('modules/login_register/js/login_register.js'); ?>"></script>
 
+
 </body>
 </html>

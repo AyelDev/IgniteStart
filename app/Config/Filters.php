@@ -36,7 +36,9 @@ class Filters extends BaseFilters
         'performance'   => PerformanceMetrics::class,
 
         //custom filter
-        'authGuard' => \App\Filters\AuthenticationGuard::class
+        'auth' => \App\Filters\Auth::class,
+        'adminAuth' => \App\Filters\AdminAuth::class,
+        'userAuth' => \App\Filters\UserAuth::class
     ];
 
     /**
