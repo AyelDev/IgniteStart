@@ -2,12 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<?= base_url('css/style.css'); ?>">    
-    <title><?= 'Ignite Start | ' . esc($title) ?></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="<= base_url('global/global.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<= base_url('modules/login_register/css/dashboard.css'); ?>"> 
+  <script src="<?= base_url('global/jquery-3.7.1.min.js'); ?>"></script>
 
+  <!-- Toastr CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+  <!-- jQuery (required for Toastr) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+  <!-- wait me js loader -->
+    <!-- WaitMe CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/waitme@1.19.0/waitMe.min.css">
+  <!-- WaitMe JS -->
+  <script src="https://cdn.jsdelivr.net/npm/waitme@1.19.0/waitMe.min.js"></script>
+
+  <title><?= esc($title) . ' | Ignite Start' ?></title>
   <!--
 
   Soon to Implement
@@ -25,8 +39,8 @@
 
 <body>
 
-    <!-- appear menu when session login is not null -->
-    <!-- ?= view('templates/menus') ?> -->
+  <!-- appear menu when session login is not null -->
+  <!-- ?= view('templates/menus') ?> -->
 
   <!-- container -->
-<div class="container">
+  <div class="container">

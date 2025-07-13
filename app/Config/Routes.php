@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
 // login pages
 
-// user login page (default)
+// user login page (default)    
 $routes->get('/', 'Home::user_login', ['filter' => 'auth']);
 
 $routes->post('/authenticate', 'User::authenticate');
