@@ -29,30 +29,11 @@
 
     main {
         flex-grow: 1;
-        padding: 2rem;
+        padding: 2rem;  
         background: #fff;
     }
     </style>
-    <div class="wrapper" style="display:flex">
-       
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-    
-        
-      <main>
-            <h1>this is dashboard</h1>
-        </main>
-
-    </div>
-
+    <?= view('includes/sidebar'); ?>
 
 
 
