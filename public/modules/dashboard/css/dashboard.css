@@ -2,42 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* HTML5 display-role reset for older browsers */
-/* end reset */
-
-/*preset*/
-
-:root {
-  --primColor: #511d43;
-  --secndColor: #901e3e;
-  --textColor: #f0e7e7;
-  --baseColor: #dc2525;
-  --baseColor2: #9bc09c;
-}
-
-button,
-input[type="submit"],
-label,
-h1,
-a,
-p {
-  font-family: "Bebas Neue", sans-serif;
-}
-input[type="text"] {
-  font-family: "Roboto", sans-serif;
-}
-
-header {
-  display: block;
-  width: 100%;
-  background-color: var(--secndColor);
-}
-
-body {
+header h1{
+  background-color: #6797ff;
+  padding: 5px;
   margin: 0;
-  padding: 0;
 }
 
-.container {
-  width: 100%;
+main,
+header {
+  margin-left: 70px;
+  transition: margin-left 0.5s;
 }
+
+
+:root { --primColor: #511d43; --secndColor: #901e3e; --textColor: #f0e7e7; --baseColor: #dc2525; --baseColor2: #9bc09c; }
+
+button, input[type="submit"], label, h1, a, p { font-family: "Bebas Neue", sans-serif; } input[type="text"] { font-family: "Roboto", sans-serif; }
+

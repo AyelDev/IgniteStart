@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="<= base_url('global/global.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<= base_url('modules/login_register/css/dashboard.css'); ?>"> 
+  <link rel="stylesheet" type="text/css" href="<?= base_url('global/global.css'); ?>">
+   <link rel="stylesheet" type="text/css" href="<?= base_url('modules/dashboard/css/dashboard.css'); ?>">
+  
   <script src="<?= base_url('global/jquery-3.7.1.min.js'); ?>"></script>
 
   <!-- Toastr CSS -->
@@ -33,14 +34,11 @@
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/skitter.styles.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/animate.min.css">
-  
   -->
 </head>
 
 <body>
-
   <!-- appear menu when session login is not null -->
   <!-- ?= view('templates/menus') ?> -->
-
   <!-- container -->
   <div class="container">
