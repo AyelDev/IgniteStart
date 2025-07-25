@@ -1,0 +1,328 @@
+/*https://colorhunt.co/palette/c7db9cfff0bdfdab9ee50046*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* HTML5 display-role reset for older browsers */
+/* end reset */
+
+/*preset*/
+
+:root {
+  --primColor: #511d43;
+  --secndColor: #901e3e;
+  --textColor: #f0e7e7;
+  --baseColor: #dc2525;
+  --baseColor2: #9bc09c;
+}
+
+button,
+input[type="submit"],
+label,
+h1,
+a,
+p {
+  font-family: "Bebas Neue", sans-serif;
+}
+input[type="text"] {
+  font-family: "Roboto", sans-serif;
+}
+
+/*Thumbnail Images*/
+/* Text Alignment */
+/* Forms Presets */
+
+/*end preset*/
+
+/*header*/
+
+header {
+  display: block;
+  width: 100%;
+  background-color: var(--secndColor);
+  background: linear-gradient(
+    0deg,
+    rgba(81, 29, 67, 1) 0%,
+    rgba(126, 30, 63, 1) 51%,
+    rgba(144, 30, 62, 1) 100%
+  );
+}
+
+header h1 {
+  margin-left: 20px;
+  margin-top: 0;
+  font-size: 50px;
+  color: var(--baseColor2);
+  margin-bottom: 0;
+}
+header h1:after {
+  content: "(To-Do App)";
+  font-size: 20px;
+}
+/*end header*/
+
+/*nav*/
+
+/*second level drop down*/
+/*third level drop down*/
+/* Drop down icon */
+/* Navigation bar icon */
+/*Burger Color*/
+/* Default Responsive Style for Toggle Swipe Right */
+/*Responsive burger and color*/
+
+/*end nav*/
+
+/*global class*/
+
+/*banner*/
+/*end banner*/
+
+/*middle*/
+/*end middle*/
+
+/*main*/
+
+/* login */
+
+.login-container {
+  background: var(--primColor);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 183px 0;
+}
+
+.login-form {
+  min-height: 342px;
+  max-width: 454px;
+  align-content: center;
+  margin: auto;
+  background-color: var(--baseColor2);
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease, transform 5s ease;
+}
+.login-form:hover {
+  box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  -webkit-box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  -moz-box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  transform: scale(1);
+}
+.login-form p {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primColor);
+  margin: 8px 0;
+  border-bottom: 2px solid #000;
+}
+
+.login-form-group {
+  margin: 0 15px;
+  padding: 20px 0;
+}
+.login-form-group label {
+  font-size: 20px;
+}
+.login-form-group input {
+  display: block;
+  width: 98%;
+  line-height: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  border-style: none;
+}
+.login-form-group button {
+  padding: 10px 37px;
+}
+
+.submit-btn {
+  background-color: #fbb636;
+  border-style: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+.submit-btn:hover {
+  background: #9e711d;
+  color: var(--textColor);
+  border-radius: 3px;
+}
+
+.recover-password {
+  background-color: #36fbfb;
+  border-style: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.recover-password:hover {
+  background: #1b7474;
+  color: var(--textColor);
+  border-radius: 3px;
+}
+
+.alert.alert-danger {
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--baseColor);
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+.alert.alert-success {
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #004e2a;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+.alert.alert-danger ul {
+  margin-right: 20px;
+}
+
+/* end login */
+
+/* register */
+
+.register-container {
+  background: var(--primColor);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 183px 0;
+}
+
+.register-form {
+  min-height: 342px;
+  max-width: 454px;
+  align-content: center;
+  margin: auto;
+  background-color: var(--baseColor2);
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.register-form:hover {
+  box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  -webkit-box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  -moz-box-shadow: 0px 1px 25px 8px rgba(255, 255, 255, 0.29);
+  transform: scale(1);
+}
+
+.register-form p {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primColor);
+  margin: 8px 0;
+  border-bottom: 2px solid #000;
+}
+
+.register-form-group {
+  margin: 0 15px;
+  padding: 20px 0;
+}
+.register-form-group label {
+  font-size: 20px;
+}
+.register-form-group label::after {
+  content: "*";
+  color: red;
+}
+.register-form-group input {
+  display: block;
+  width: 98%;
+  line-height: 40px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  border-style: none;
+}
+.register-form-group button {
+  padding: 10px 37px;
+}
+/* end register */
+
+/*end main*/
+
+/*sidebar*/
+/*end sidebar*/
+
+/*bottom*/
+/*end bottom*/
+
+/*footer*/
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 95.8%;
+  background-color: var(--primColor);
+  color: var(--textColor);
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: white;
+}
+
+/**Resources**/
+/* IE 8 */
+/* Sitemap Style */
+/* Pages under Certain Parent Pages */
+/* Breadcrumb Styling */
+/* End Breadcrumb Styling */
+/* Non-home */
+/* Form Activation Style (Recaptcha & Prompt Message) */
+/* End Form Activation Styling */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* override toastr */
+.toast-top-center {
+  top: 120px !important;
+}
+
+#toast-container * {
+  font-family: "Bebas Neue", sans-serif !important;
+}
+
+/* override waitme js*/
+.waitMe_text {
+  font-family: "Bebas Neue", sans-serif !important;
+}
+
+.waitMe_container .waitMe {
+  border-radius: inherit !important;
+}

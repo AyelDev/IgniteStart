@@ -5,18 +5,19 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
 
-$routes->post('/login', 'LoginAuth::authenticate');
+// login pages
 
-// $routes->get('/user','UserController::getstudents');
+// user login page (default)    
+$routes->get('/', 'Home::user_login', ['filter' => 'auth']);
 
-// $routes->post('user/register', 'UserRegister::register');
+$routes->post('/authenticate', 'User::authenticate');
 
-$routes->get('user/register', 'User::index');   
-
+$routes->get('user/register', 'User::index');
 $routes->post('user/register', 'User::register');
 
-$routes->get('user/dashboard', 'User::dashboard', ['filter' => 'authGuard']);
+$routes->get('user/dashboard', 'User::userDashboard', ['filter' => 'userAuth']);
 
+$routes->get('admin/dashboard', 'User::adminDashboard', ['filter' => 'adminAuth']);
 
+$routes->get('/logout', 'User::logout');

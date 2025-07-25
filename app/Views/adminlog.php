@@ -1,25 +1,23 @@
-<?= view('includes/login_register/head', ['title' => 'Login']);  ?>
-<?= view('includes/login_register/header'); ?>
+<?= view('templates/head', ['title' => 'Admin Login']);  ?>
+<?= view('templates/header'); ?>
 
+<!-- admin page -->
+ 
 <div class="login-container">
 
     <div class="login-form">
 
-        <form method="post">
+        <form action="login" method="post">
+
             <div class="login-form-group">
-                <p for="">Login</p>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <p for="">Admin Login</p>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
 
-                <button class="submit-btn" id="login"  name="ignite-login">login</button>
+                <button class="submit-btn" name="ignite-login">login</button>
 
-                <button class="recover-password" name="ignite-login">recover my account</button>
-                
-                <a href="user/register">Register</a>
-
-               
                 <?php if (session()->has('error-msg')): ?>
                     <div class="alert alert-danger">
                         <?= session('error-msg') ?>
@@ -31,11 +29,14 @@
                         <?= session('success-msg') ?>
                     </div>
                 <?php endif; ?>
+
             </div>
+
         </form>
 
     </div>
 
 </div>
 
-<?= view('includes/login_register/footer'); ?>
+
+<?= view('templates/footer'); ?>

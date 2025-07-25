@@ -8,7 +8,7 @@ use function PHPSTORM_META\map;
 
 class UserModel extends Model
 {
-    protected $table            = 'user';
+    protected $table            = 'tbl_user';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -18,8 +18,10 @@ class UserModel extends Model
     //NOTE: diri mag setup sa sud sa user nga table
     protected $allowedFields    = [
         'id',
+        'user_type',
+        'user_status',
         'name',
-        'username',
+        'email',
         'password',
         'created_at'
     ];

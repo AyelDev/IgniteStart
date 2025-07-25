@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class AuthenticationGuard implements FilterInterface
+class UserAuth implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -23,13 +23,23 @@ class AuthenticationGuard implements FilterInterface
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
+
+
     public function before(RequestInterface $request, $arguments = null)
     {
-         if (!session()->get('userLogin') || !session()->get('adminLogin')) {
-            return redirect()
-                ->to('/');
+
+        if(!session()->get('user_login')){
+            return redirect()->to('/');
+        }
+
+        switch (session()->get('user_login')['user_type']) {
+            case 2:
+                return;
+            default:
+                return redirect()->to('/'); // Or a 403 page
         }
     }
+
 
     /**
      * Allows After filters to inspect and modify the response
@@ -43,8 +53,5 @@ class AuthenticationGuard implements FilterInterface
      *
      * @return ResponseInterface|void
      */
-    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
-    {
-        //
-    }
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null) {}
 }

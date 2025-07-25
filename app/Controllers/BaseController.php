@@ -55,4 +55,27 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = service('session');
     }
+
+    // CUSTOMIZE FUNCTIONS
+    public function prepareUserData($JSON_Data)
+    {
+        $data = [];
+
+        if ($JSON_Data) {
+
+            foreach ($JSON_Data as $key => $value) {
+                // echo "{$key}: {$value}";
+                switch ($key) {
+                    case 'password':
+                        $data[$key] = trim(password_hash($value, PASSWORD_BCRYPT, ['cost' => 13]));
+                        break;
+                    default:
+                        $data[$key] = trim($value);
+                        break;
+                }
+            }
+        }
+
+        return $data;
+    }
 }

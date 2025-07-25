@@ -1,7 +1,11 @@
-<?= view('templates/header',  ['title' => 'Dashboard']); ?>
+    <?= view('includes/head', ['title' => 'User - dashboard']);  ?>
+    <!-- <= view('includes/header'); ?> -->
 
-            <div>
-                <h1>welcome to user dashboard</h1>
-            </div>
-        
-<?= view('templates/footer'); ?>
+
+    <?= view('includes/sidebar'); ?>
+
+    <main id="main">
+        <h1>Sample</h1>
+    </main>
+
+    <?= view('includes/footer'); ?>

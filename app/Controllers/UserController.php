@@ -19,5 +19,4 @@ class UserController extends BaseController
         echo json_encode($result);
             // return view('index_file');
     }
-
 }
