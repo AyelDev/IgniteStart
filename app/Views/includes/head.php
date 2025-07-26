@@ -5,8 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="<?= base_url('global/global.css'); ?>">
-   <link rel="stylesheet" type="text/css" href="<?= base_url('modules/dashboard/css/dashboard.css'); ?>">
-  
+
+  <?php
+  $parts = explode('-', $title ?? '');
+  $keyword = strtolower(trim(end($parts)));
+  ?>
+
+  <?php if (!empty($styles)): ?>
+    <?php foreach ($styles as $style): ?>
+      <?php if (strpos($style, $keyword) !== false): ?>
+        <link rel="stylesheet" href="<?= base_url($style) ?>">
+      <?php endif; ?>
+    <?php endforeach; ?>
+  <?php endif; ?>
+
   <script src="<?= base_url('global/jquery-3.7.1.min.js'); ?>"></script>
 
   <!-- Toastr CSS -->
@@ -17,7 +29,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <!-- wait me js loader -->
-    <!-- WaitMe CSS -->
+  <!-- WaitMe CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/waitme@1.19.0/waitMe.min.css">
   <!-- WaitMe JS -->
   <script src="https://cdn.jsdelivr.net/npm/waitme@1.19.0/waitMe.min.js"></script>

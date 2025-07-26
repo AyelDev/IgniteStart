@@ -16,8 +16,15 @@ $routes->post('/authenticate', 'User::authenticate');
 $routes->get('user/register', 'User::index');
 $routes->post('user/register', 'User::register');
 
-$routes->get('user/dashboard', 'User::userDashboard', ['filter' => 'userAuth']);
+$routes->group("", ['filter' => 'userAuth'], function ($routes) {
+    $routes->get('user/dashboard', 'User::userDashboard');
+    $routes->get('user/assign-task', 'User::assign-task');
+});
 
-$routes->get('admin/dashboard', 'User::adminDashboard', ['filter' => 'adminAuth']);
+$routes->group("", ['filter' => 'adminAuth'], function ($routes) {
+    $routes->get('admin/dashboard', 'User::adminDashboard');
+    $routes->get('admin/users', 'User::users');
+    $routes->get('admin/assign-task', 'User::assign_task');
+});
 
 $routes->get('/logout', 'User::logout');

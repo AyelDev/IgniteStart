@@ -5,7 +5,7 @@
     <?= view('includes/sidebar'); ?>
 
     <main>
-        <H1>ASDASD</H1>
+        <H1>Assign Task</H1>
     </main>
 
     <?= view('includes/footer'); ?>

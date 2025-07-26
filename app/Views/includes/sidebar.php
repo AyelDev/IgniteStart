@@ -2,17 +2,99 @@
 
 <!-- <div class="wrapper" style="display:flex"> -->
 <style>
-    .sidebar { height: 100%; width: 70px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #432f5eff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
-
-    .sidebar a { display: block; padding: 8px 8px 8px 13px; text-decoration: none; font-size: 20px; color: #ffffff; transition: 0.3s; background-color: transparent; white-space: nowrap; }
-
-    .sidebar a:hover, .sidebar svg:hover { color: #000000ff; background-color: #ffffff; }
-
-    .sidebar .label, .sidebar svg { display: inline-block; vertical-align: middle; }
+    header {
+        background-color: var(--primColor);
+        color: var(--textColor);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 21px;
+        margin-left: 70px;
+        height: 59px;
+    }
     
-    .sidebar .label { display: none; margin-left: 10px; }
+    header div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
 
-    @media screen and (max-height: 450px) { .sidebar { padding-top: 15px; } .sidebar a { font-size: 18px; } }
+    :root {
+        --primColor: #511d43;
+        --secndColor: #901e3e;
+        --textColor: #f0e7e7;
+        --baseColor: #dc2525;
+        --baseColor2: #9bc09c;
+    }
+    header,
+    button,
+    input[type="submit"],
+    label,
+    h1,
+    a,
+    p {
+        font-family: "Bebas Neue", sans-serif;
+    }
+
+    input[type="text"] {
+        font-family: "Roboto", sans-serif;
+    }
+
+    main,
+    header {
+        margin-left: 250px;
+        transition: margin-left 0.5s;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #432f5eff;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #ffffff;
+        transition: 0.3s;
+        background-color: transparent;
+        white-space: nowrap;
+    }
+
+    .sidebar a:hover,
+    .sidebar svg:hover {
+        color: #000000ff;
+        background-color: #ffffff;
+    }
+
+    .sidebar .label,
+    .sidebar svg {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .sidebar .label {
+        margin-left: 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidebar {
+            padding-top: 15px;
+        }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+    }
 </style>
 
 <div id="sidebar" class="sidebar">
@@ -28,7 +110,7 @@
         <span class="label">Dashboard</span></a>
 
     <?php if (isset($user) && $user['user_type'] == 1): ?>
-        <a href="/Users">
+        <a href="users">
             <svg viewBox="0 0 15 15" width="30px" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -40,7 +122,7 @@
             <span class="label">Users</span></a>
     <?php endif; ?>
 
-    <a href="/Assign Task">
+    <a href="assign-task">
         <svg viewBox="2 2 20 20" width="30px" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
