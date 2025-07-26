@@ -25,6 +25,7 @@ $routes->group("", ['filter' => 'adminAuth'], function ($routes) {
     $routes->get('admin/dashboard', 'User::adminDashboard');
     $routes->get('admin/users', 'User::users');
     $routes->get('admin/assign-task', 'User::assign_task');
+    $routes->get('admin/getUsers' , 'User::getUsers');
 });
 
 $routes->get('/logout', 'User::logout');

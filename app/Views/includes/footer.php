@@ -12,22 +12,21 @@
   </div>
 </footer> -->
 
-<!-- <script src="<= base_url('global/main.js'); ?>"></script> -->
+<script src="<?= base_url('global/main.js'); ?>"></script>
 <!--<script src="<= base_url('modules/login_register/js/login_register.js'); ?>"></script> -->
 
 <?php
 // Extract a keyword from the title (e.g., "admin - dashboard" → "dashboard")
 $parts = explode('-', $title ?? '');
 $keyword = strtolower(trim(end($parts)));
-?>
+?> 
 
 
 <?php if (!empty($scripts)): ?>
   <?php foreach ($scripts as $script): ?>
     <?php if (strpos($script, $keyword) !== false): ?>
-      <link rel="stylesheet" href="<?= base_url($script) ?>">
+        <script src="<?= base_url($script) ?>"></script>
     <?php endif; ?>
-    <script src="<?= base_url($script) ?>"></script>
   <?php endforeach; ?>
 <?php endif; ?>
 

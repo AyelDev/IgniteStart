@@ -1,6 +1,6 @@
 // AJAX REQUESTS
 
-async function sendRequest(jsonData, url, method) {
+async function sendRequest(jsonData = '', url, method) {
     try {
         const response = await new Promise((resolve, reject) => {
             $.ajax({

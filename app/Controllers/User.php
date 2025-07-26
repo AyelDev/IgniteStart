@@ -55,9 +55,17 @@ class User extends BaseController
 
             if ($user && password_verify($JSON_Data['password'], $user['password'])) {
 
+                $userSession = [
+                    'id' => $user['id'],
+                    'user_type' => $user['user_type'],
+                    'user_status' =>  $user['user_status'],
+                    'name' => $user['name'],
+                    'email' => $user['email']
+                ];
+
                 switch ($user['user_status']) {
                     case 0:
-                        $this->session->set('user_login', $user);
+                        $this->session->set('user_login', $userSession);
                         return $this->response
                             ->setStatusCode(401)
                             ->setContentType('application/json')
@@ -69,7 +77,7 @@ class User extends BaseController
                             ]);
 
                     case 1:
-                        $this->session->set('user_login', $user);
+                        $this->session->set('user_login', $userSession);
                         return $this->response
                             ->setStatusCode(200)
                             ->setContentType('application/json')
@@ -176,54 +184,98 @@ class User extends BaseController
     //user
     public function userDashboard()
     {
-        $data = [];
-        $data['session'] = session();
+        $data = [
+            'title' => 'user - dashboard',
+            'session' => session(),
+
+            'styles' => [
+                'modules/dashboard/css/dashboard.css',
+            ],
+            'scripts' => [
+                'modules/dashboard/js/dashboard.js',
+            ],
+        ];
         return view('user/dashboard', $data);
     }
 
     //admin
-    public function adminDashboard(){
-    
+    public function adminDashboard()
+    {
+
         $data = [
             'title' => 'admin - dashboard',
             'session' => session(),
-            
+
             'styles' => [
-            'modules/dashboard/css/dashboard.css',
-                ],
+                'modules/dashboard/css/dashboard.css',
+            ],
             'scripts' => [
-            'modules/dashboard/js/dashboard.js',
+                'modules/dashboard/js/dashboard.js',
             ],
         ];
- 
+
         return view('admin/dashboard', $data, ['cache' => 1]);
     }
 
     public function users()
     {
-        $data = [];
-        $data['session'] = session();
+       $data = [
+            'title' => 'admin - users',
+            'session' => session(),
+
+            'styles' => [
+                'modules/users/css/users.css',
+            ],
+            'scripts' => [
+                'modules/users/js/users.js',
+            ],
+        ];
         return view('admin/users', $data, ['cache' => 1]);
     }
 
-    public function assign_task(){
+    public function getUsers()
+    {
+        $userModel = new UserModel();
+        $user = $userModel->select('id, name, email, created_at, user_status')->findAll();
 
-         $data = [
+        $user_count = count($user);
+        //  && $this->request->isAJAX()
+        if ($user_count > 0) {
+            return $this->response
+                ->setStatusCode(200)
+                ->setJSON([
+                    'sts_code' => 1,
+                    'data' => $user
+                ]);
+        }
+
+        return $this->response
+            ->setStatusCode(400)
+            ->setJSON([
+                'sts_code' => 0,
+                'message' => 'Something went wrong.'
+            ]);
+    }
+
+    public function assign_task()
+    {
+
+        $data = [
             'title' => 'admin - assign-task',
             'session' => session(),
-            
+
             'styles' => [
-            'modules/dashboard/css/assign_task.css',
-                ],
+                'modules/assigntask/css/assign_task.css',
+            ],
             'scripts' => [
-            'modules/dashboard/js/assign_task.js',
+                'modules/assigntask/js/assign_task.js',
             ],
         ];
- 
+
         return view('assigntask', $data, ['cache' => 1]);
     }
 
-    public function _assign_task($asd){
+    public function _assign_task($asd) {
 
     }
 

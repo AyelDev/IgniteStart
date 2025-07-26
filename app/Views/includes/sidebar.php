@@ -2,22 +2,13 @@
 
 <!-- <div class="wrapper" style="display:flex"> -->
 <style>
-    header {
-        background-color: var(--primColor);
-        color: var(--textColor);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 21px;
-        margin-left: 70px;
-        height: 59px;
-    }
+    header { background-color: var(--primColor); color: var(--textColor); display: flex; justify-content: space-between; align-items: center; padding: 0 21px; margin-left: 70px; height: 59px; }
     
-    header div {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
+    header div { display: flex; align-items: center; gap: 15px; }
+
+    header button{ color: black; background-color: var(--baseColor2); padding: 10px 15px; border: none; border-radius: 4px; font-size: 14px; cursor: pointer; transition: background-color 0.3s, color 0.3s ease; }
+
+    header button:hover{ background-color: var(--secndColor); color: var(--textColor); }
 
     :root {
         --primColor: #511d43;
@@ -26,75 +17,33 @@
         --baseColor: #dc2525;
         --baseColor2: #9bc09c;
     }
-    header,
-    button,
-    input[type="submit"],
-    label,
-    h1,
-    a,
-    p {
-        font-family: "Bebas Neue", sans-serif;
-    }
 
-    input[type="text"] {
-        font-family: "Roboto", sans-serif;
-    }
+    header, button, .dataTables_info, input[type="submit"], label, h1, a, p { font-family: "Bebas Neue", sans-serif; }
 
-    main,
-    header {
-        margin-left: 250px;
-        transition: margin-left 0.5s;
-    }
+    table, table label, input[type="text"] { font-family: "Roboto", sans-serif; }
 
-    .sidebar {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #432f5eff;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-    }
+    /* custom stripe table */
+    table.dataTable.stripe tbody tr.odd { background-color: var(--baseColor2); color: var(--primColor)/* light blue */ }
 
-    .sidebar a {
-        display: block;
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #ffffff;
-        transition: 0.3s;
-        background-color: transparent;
-        white-space: nowrap;
-    }
+    table.dataTable.stripe tbody tr.even { background-color: var(--textColor); color: var(--primColor)/* white or any other base */ }
 
-    .sidebar a:hover,
-    .sidebar svg:hover {
-        color: #000000ff;
-        background-color: #ffffff;
-    }
+    #myTable thead th { background-color: var(--primColor);  /* Dark blue background */ color: white; }
 
-    .sidebar .label,
-    .sidebar svg {
-        display: inline-block;
-        vertical-align: middle;
-    }
+    /* end custom stripe table */
 
-    .sidebar .label {
-        margin-left: 10px;
-    }
+    main, header { margin-left: 250px; transition: margin-left 0.5s; }
 
-    @media screen and (max-height: 450px) {
-        .sidebar {
-            padding-top: 15px;
-        }
+    .sidebar { height: 100%; width: 250px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #432f5eff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
 
-        .sidebar a {
-            font-size: 18px;
-        }
-    }
+    .sidebar a { display: block; padding: 8px 8px 8px 32px; text-decoration: none; font-size: 20px; color: #ffffff; transition: 0.3s; background-color: transparent; white-space: nowrap; }
+
+    .sidebar a:hover, .sidebar svg:hover { color: #000000ff; background-color: #ffffff; }
+
+    .sidebar .label, .sidebar svg { display: inline-block; vertical-align: middle; }
+
+    .sidebar .label { margin-left: 10px; }
+
+    @media screen and (max-height: 450px) { .sidebar { padding-top: 15px; } .sidebar a { font-size: 18px; } }
 </style>
 
 <div id="sidebar" class="sidebar">
@@ -135,8 +84,8 @@
             </g>
         </svg>
         <span class="label">Assign Task</span></a>
-
-    <a href="/logout">
+ 
+        <!--    <a href="/logout">
         <svg viewBox="0 0 19 19" width="30px" fill="currentColor    " xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -145,7 +94,7 @@
                 <path d="M9.375 8C9.375 8.70219 9.375 9.05329 9.54351 9.3055C9.61648 9.41471 9.71025 9.50848 9.81946 9.58145C10.0717 9.74996 10.4228 9.74996 11.125 9.74996L15.375 9.74996C16.6176 9.74996 17.625 10.7573 17.625 12C17.625 13.2426 16.6176 14.25 15.375 14.25L11.125 14.25C10.4228 14.25 10.0716 14.25 9.8194 14.4185C9.71023 14.4915 9.6165 14.5852 9.54355 14.6944C9.375 14.9466 9.375 15.2977 9.375 16C9.375 18.8284 9.375 20.2426 10.2537 21.1213C11.1324 22 12.5464 22 15.3748 22L16.3748 22C19.2032 22 20.6174 22 21.4961 21.1213C22.3748 20.2426 22.3748 18.8284 22.3748 16L22.3748 8C22.3748 5.17158 22.3748 3.75736 21.4961 2.87868C20.6174 2 19.2032 2 16.3748 2L15.3748 2C12.5464 2 11.1324 2 10.2537 2.87868C9.375 3.75736 9.375 5.17157 9.375 8Z"></path>
             </g>
         </svg>
-        <span class="label">Logout</span></a>
+        <span class="label">Logout</span></a> -->
 </div>
 
 <script>
