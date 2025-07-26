@@ -1,11 +1,11 @@
-    <?= view('includes/head');  ?>
+    <?= view('includes/head', ['title' => 'admin - users']);  ?>
     <?= view('includes/header'); ?>
 
-
+ 
     <?= view('includes/sidebar'); ?>
 
     <main>
-        <H1>ASDASD</H1>
+            <h1>Users</h1>
     </main>
 
     <?= view('includes/footer'); ?>

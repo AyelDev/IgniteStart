@@ -7,7 +7,6 @@ use App\Models\UserModel;
 class User extends BaseController
 {
     protected $session;
-
     public function __construct()
     {
         $this->session = session();
@@ -76,9 +75,9 @@ class User extends BaseController
                             ->setContentType('application/json')
                             ->setJSON([
                                 'sts_code' => 1,
-                                'id' => $user['id'], 
+                                'id' => $user['id'],
                                 'user_type' => $user['user_type'],
-                                'message' => 'Welcome ' . $user['name']                                
+                                'message' => 'Welcome ' . $user['name']
                             ]);
 
                     default:
@@ -174,7 +173,7 @@ class User extends BaseController
             ]);
     }
 
-    //dashboard
+    //user
     public function userDashboard()
     {
         $data = [];
@@ -182,14 +181,54 @@ class User extends BaseController
         return view('user/dashboard', $data);
     }
 
-    public function adminDashboard()
+    //admin
+    public function adminDashboard(){
+    
+        $data = [
+            'title' => 'admin - dashboard',
+            'session' => session(),
+            
+            'styles' => [
+            'modules/dashboard/css/dashboard.css',
+                ],
+            'scripts' => [
+            'modules/dashboard/js/dashboard.js',
+            ],
+        ];
+ 
+        return view('admin/dashboard', $data, ['cache' => 1]);
+    }
+
+    public function users()
     {
         $data = [];
         $data['session'] = session();
-        return view('admin/dashboard', $data);
+        return view('admin/users', $data, ['cache' => 1]);
     }
 
-    public function logout(){
+    public function assign_task(){
+
+         $data = [
+            'title' => 'admin - assign-task',
+            'session' => session(),
+            
+            'styles' => [
+            'modules/dashboard/css/assign_task.css',
+                ],
+            'scripts' => [
+            'modules/dashboard/js/assign_task.js',
+            ],
+        ];
+ 
+        return view('assigntask', $data, ['cache' => 1]);
+    }
+
+    public function _assign_task($asd){
+
+    }
+
+    public function logout()
+    {
         session()->destroy();
         return redirect()->to('/');
     }
