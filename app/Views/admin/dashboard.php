@@ -5,16 +5,12 @@
     <?= view('includes/sidebar'); ?>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        main {
+        .dashboard-section {
             display: flex;
             justify-content: space-around;
             gap: 20px;
             flex-wrap: wrap;
+            margin: 0 20px;
         }
 
         .card {
@@ -41,19 +37,20 @@
     </style>
 
     <main>
-        <div class="card">
-            <h2 id="activeUsers">--</h2>
-            <p>Active Users</p>
+        <div class="dashboard-section">
+            <div class="card">
+                <h2 id="activeUsers">--</h2>
+                <p>Active Users</p>
+            </div>
+            <div class="card">
+                <h2 id="inactiveUsers">--</h2>
+                <p>Inactive Users</p>
+            </div>
+            <div class="card">
+                <h2 id="tasksCount">--</h2>
+                <p>Tasks</p>
+            </div>
         </div>
-        <div class="card">
-            <h2 id="inactiveUsers">--</h2>
-            <p>Inactive Users</p>
-        </div>
-        <div class="card">
-            <h2 id="tasksCount">--</h2>
-            <p>Tasks</p>
-        </div>
-
     </main>
 
     <?= view('includes/footer'); ?>
