@@ -29,3 +29,8 @@ $routes->group("", ['filter' => 'adminAuth'], function ($routes) {
 });
 
 $routes->get('/logout', 'User::logout');
+
+//test login
+$routes->get('/testlogin', 'User::testlogin');
+
+

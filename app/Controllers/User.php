@@ -219,7 +219,7 @@ class User extends BaseController
 
     public function users()
     {
-       $data = [
+        $data = [
             'title' => 'admin - users',
             'session' => session(),
 
@@ -275,13 +275,27 @@ class User extends BaseController
         return view('assigntask', $data, ['cache' => 1]);
     }
 
-    public function _assign_task($asd) {
-
-    }
+    public function _assign_task($asd) {}
 
     public function logout()
     {
         session()->destroy();
         return redirect()->to('/');
+    }
+
+    public function testlogin()
+    {
+         $data = [
+            'title' => 'test admin - assign-task',
+            'session' => session(),
+
+            'styles' => [
+                'modules/assigntask/css/assign_task.css',
+            ],
+            'scripts' => [
+                'modules/assigntask/js/assign_task.js',
+            ],
+        ];
+        return view('testlogin', $data, ['cache' => 1]);
     }
 }
