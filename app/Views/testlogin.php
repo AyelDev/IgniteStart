@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,18 @@
     :root {
       --mainFont: "Sofia Sans", sans-serif;
       --mainColor: rebeccapurple;
+    }
+
+    p,
+    label,
+    input,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    a {
+      font-family: "Sofia Sans", sans-serif;
     }
 
     body {
@@ -36,7 +49,8 @@
     }
 
     #loginForm,
-    #registerForm {
+    #registerForm,
+    #recoverForm {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -84,13 +98,29 @@
       color: white;
       border-radius: 4px;
       cursor: pointer;
+      transition: background-color 0.5s ease;
     }
 
-    .register {
+    #recoverBtn:hover, #loginBtn:hover{
+      background-color: #2b8a0eff;
+    }
+
+    #registerBtn:hover,
+    #recoverAccountBtn:hover, #showRecover:hover {
+      background-color: var(--mainColor);
+    }
+
+    .register:hover{
+      color: var(--mainColor);
+    }
+
+    .register,
+    .login {
       color: white;
       cursor: pointer;
       display: inline-block;
       margin-top: 10px;
+      transition: color 0.5s ease;
     }
 
     header,
@@ -129,8 +159,8 @@
       <h2>Login</h2>
       <input type="text" id="loginUsername" placeholder="Username" />
       <input type="password" id="loginPassword" placeholder="Password" />
-      <button id="loginBtn" class="login">Login</button>
-      <button id="recoverAccountBtn">Recover Account</button>
+      <button id="loginBtn">Login</button>
+      <button id="showRecover">Recover Account</button>
       <a class="register" id="showRegister">register</a>
     </div>
 
@@ -140,7 +170,16 @@
       <input type="email" id="registerEmail" placeholder="Email" />
       <input type="password" id="registerPassword" placeholder="Password" />
       <button id="registerBtn">Register</button>
-      <a class="register" id="showLogin">login</a>
+      <a class="login" id="showLogin">login</a>
+    </div>
+
+    <div id="recoverForm">
+      <h2>Register</h2>
+      <p>Please enter email to recover password. After sending please input code to reset your password</p>
+      <input type="email" id="recoverEmail" placeholder="Email" />
+      <input type="text" id="registercode" placeholder="Code" />
+      <button id="recoverBtn">Submit</button>
+      <a class="login" id="recoverLogin">login</a>
     </div>
   </div>
 
@@ -159,6 +198,7 @@
     const canvas = document.getElementById("myCanvas");
     const container = document.getElementById("container");
     const loginForm = document.getElementById("loginForm");
+    const recoverForm = document.getElementById("recoverForm");
     const registerForm = document.getElementById("registerForm");
 
     function init() {
@@ -170,7 +210,9 @@
       camera.position.z = 1;
       camera.rotation.x = Math.PI / 2;
 
-      renderer = new THREE.WebGLRenderer({ canvas });
+      renderer = new THREE.WebGLRenderer({
+        canvas
+      });
       renderer.setSize(width, height);
 
       const vertices = [];
@@ -246,12 +288,8 @@
       cancelAnimationFrame(animationId);
     }
 
-    function registerBurstThenReinit() {
-      registerForm.classList.add("show");
-      loginForm.classList.remove("show");
-
+    function BurstThenReinit() {
       velocityBoost = 0.5;
-
       setTimeout(() => {
         velocityBoost = 0;
         disposeScene();
@@ -259,10 +297,32 @@
       }, 500);
     }
 
-    document.getElementById("showRegister").addEventListener("click", registerBurstThenReinit);
+    document.getElementById("showRegister").addEventListener("click", () => {
+      registerForm.classList.add("show");
+      recoverForm.classList.remove("show");
+      loginForm.classList.remove("show");
+      BurstThenReinit();
+    });
+
+    document.getElementById("showRecover").addEventListener("click", () => {
+      recoverForm.classList.add("show");
+      registerForm.classList.remove("show");
+      loginForm.classList.remove("show");
+      BurstThenReinit();
+    });
+
     document.getElementById("showLogin").addEventListener("click", () => {
       registerForm.classList.remove("show");
+      recoverForm.classList.remove("show");
       loginForm.classList.add("show");
+      BurstThenReinit();
+    });
+
+    document.getElementById("recoverLogin").addEventListener("click", ()=>{
+      registerForm.classList.remove("show");
+      recoverForm.classList.remove("show");
+      loginForm.classList.add("show");
+      BurstThenReinit();
     });
 
     // Initialize
@@ -270,4 +330,5 @@
     loginForm.classList.add("show");
   </script>
 </body>
+
 </html>
