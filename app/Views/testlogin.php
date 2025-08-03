@@ -101,16 +101,18 @@
       transition: background-color 0.5s ease;
     }
 
-    #recoverBtn:hover, #loginBtn:hover{
+    #recoverBtn:hover,
+    #loginBtn:hover {
       background-color: #2b8a0eff;
     }
 
     #registerBtn:hover,
-    #recoverAccountBtn:hover, #showRecover:hover {
+    #recoverAccountBtn:hover,
+    #showRecover:hover {
       background-color: var(--mainColor);
     }
 
-    .register:hover{
+    .register:hover {
       color: var(--mainColor);
     }
 
@@ -126,11 +128,20 @@
     header,
     footer {
       position: absolute;
+      z-index: 2;
+      font-family: var(--mainFont);
+    }
+
+    header {
+      width: 95%;
+      text-align: left;
+      color: white;
+    }
+
+    footer {
       width: 100%;
       text-align: center;
       color: white;
-      z-index: 2;
-      font-family: var(--mainFont);
     }
 
     header {
@@ -155,14 +166,14 @@
   <div id="container">
     <canvas id="myCanvas"></canvas>
 
-    <div id="loginForm">
+    <form id="loginForm" method="post">
       <h2>Login</h2>
       <input type="text" id="loginUsername" placeholder="Username" />
       <input type="password" id="loginPassword" placeholder="Password" />
       <button id="loginBtn">Login</button>
       <button id="showRecover">Recover Account</button>
       <a class="register" id="showRegister">register</a>
-    </div>
+    </form>
 
     <div id="registerForm">
       <h2>Register</h2>
@@ -318,7 +329,7 @@
       BurstThenReinit();
     });
 
-    document.getElementById("recoverLogin").addEventListener("click", ()=>{
+    document.getElementById("recoverLogin").addEventListener("click", () => {
       registerForm.classList.remove("show");
       recoverForm.classList.remove("show");
       loginForm.classList.add("show");
